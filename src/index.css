@@ -1,0 +1,22 @@
+@import "tailwindcss";
+@theme {
+  --font-custom: "Jost", sans-serif;
+  --color-primary-black: #222222;
+  --color-primary-white: #ffffff;
+  --color-third-color: #b9a16b;
+}
+.ul-list {
+  @apply ml-14 flex gap-11;
+}
+.list-items {
+  @apply font-custom after:bg-primary-black relative text-sm leading-6 font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%];
+}
+.slick-dots .slick-active {
+  @apply border-primary-black flex h-7.5 w-7.5 items-center justify-center rounded-full border;
+}
+.slick-dots ul {
+  @apply flex items-center justify-center;
+}
+.slick-dots .slick-active div {
+  @apply bg-primary-black;
+}
