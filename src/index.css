@@ -4,6 +4,7 @@
   --color-primary-black: #222222;
   --color-primary-white: #ffffff;
   --color-third-color: #b9a16b;
+  --color-secondary-color: #767676;
 }
 .ul-list {
   @apply ml-14 flex gap-11;
