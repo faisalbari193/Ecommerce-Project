@@ -7,7 +7,8 @@ import axios from "axios";
 const TrendyProducts = () => {
   const [products, setProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState(1);
-  let limitedProducts = products.slice(0, 12);
+  const [showAll, setShowAll] = useState(false);
+  let limitedProducts = showAll ? products : products.slice(0, 12);
   function getProducts() {
     axios
       .get("https://dummyjson.com/products")
@@ -51,6 +52,17 @@ const TrendyProducts = () => {
             <Product product={product} key={product.id} />
           ))}
         </div>
+        {/* See More / See Less Button */}
+        {products.length > 12 && (
+          <div className="mt-10 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="rounded-md bg-black px-6 py-2 text-white duration-300 hover:bg-gray-800"
+            >
+              {showAll ? "See Less" : "See More"}
+            </button>
+          </div>
+        )}
       </Container>
     </section>
   );
