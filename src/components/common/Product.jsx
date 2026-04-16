@@ -3,12 +3,27 @@ import Image from "./Image";
 const Product = ({ product }) => {
   return (
     <div className="max-w-82.5">
-      <div className="group relative">
+      {/* <div className="group relative">
         <Image src={product.thumbnail} alt="Product Image" />
         <div className="invisible absolute bottom-0 left-2/4 w-77.5 translate-x-[-50%] bg-white pt-4 pb-2.5 text-center shadow shadow-gray-200 duration-100 group-hover:visible group-hover:bottom-5 group-hover:duration-300">
           <button className="font-custom text-sm leading-6 font-medium">
             ADD TO CART
           </button>
+        </div>
+      </div> */}
+      <div className="group relative overflow-hidden">
+        {/* Image */}
+        <img
+          src={product.thumbnail}
+          alt="Product"
+          className="w-full transition duration-300 group-hover:blur-sm"
+        />
+
+        {/* Overlay Button */}
+        <div className="absolute inset-0 flex items-end justify-center opacity-0 transition duration-300 group-hover:opacity-100">
+          <div className="mb-5 bg-white px-6 py-2 shadow-md">
+            <button className="text-sm font-medium">ADD TO CART</button>
+          </div>
         </div>
       </div>
       <div className="flex justify-between">
