@@ -59,6 +59,7 @@ const TrendyProducts = () => {
                   : "font-custom text-secondary-color relative cursor-pointer text-base font-medium"
               }`}
             >
+              
               {item.name}
             </li>
           ))}
