@@ -1,18 +1,18 @@
 export const ProductCategoryData = [
   {
     id: 1,
-    name: "ALL",
+    name: "all",
   },
   {
     id: 2,
-    name: "NEWARRIVALS",
+    name: "beauty",
   },
   {
     id: 3,
-    name: "BEST SELLERS",
+    name: "fragrances",
   },
   {
     id: 4,
-    name: "TOP RATTING",
+    name: "groceries",
   },
 ];
