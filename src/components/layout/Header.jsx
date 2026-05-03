@@ -2,6 +2,7 @@ import React from "react";
 import Image from "../common/Image";
 import Container from "../ui/Container";
 import { navbardata } from "../../api/navbardata";
+import { Link } from "react-router";
 const Header = () => {
   const cartItems = 3;
   return (
@@ -11,11 +12,13 @@ const Header = () => {
           <Container>
             <div className="flex items-center justify-between">
               <div className="flex items-center">
-                <Image src="images/logo.png" className="" alt="logo" />
+                <Link to="/">
+                  <Image src="images/logo.png" className="" alt="logo" />
+                </Link>
                 <ul className="ul-list">
                   {navbardata?.map((navItem) => (
                     <li key={navItem.id} className="list-items">
-                      {navItem.name}
+                      <Link to={navItem.url}>{navItem.name}</Link>
                     </li>
                   ))}
                 </ul>

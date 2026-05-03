@@ -1,5 +1,5 @@
 import banner1 from "../assets/Images/banner.png";
-import banner2 from "../assets//Images/banner2.png";
+import banner2 from "../assets/Images/banner2.png";
 import banner3 from "../assets/Images/banner3.png";
 
 export const BannerData = [
