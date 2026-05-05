@@ -3,9 +3,8 @@ import { FiChevronDown } from "react-icons/fi";
 import { IoFilter } from "react-icons/io5";
 import Breadcrumb from "../common/Breadcrumb";
 import Container from "../ui/Container";
-const Sorting = () => {
+const Sorting = ({ setActiveView, activeView }) => {
   const [open, setOpen] = useState(false);
-  const [activeView, setActiveView] = useState(4);
   const [selected, setSelected] = useState("DEFAULT SORTING");
   const options = [
     "DEFAULT SORTING",

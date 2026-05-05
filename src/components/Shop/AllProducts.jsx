@@ -2,13 +2,13 @@ import React from "react";
 import Container from "../ui/Container";
 import Product from "../common/Product";
 
-const AllProducts = ({ products }) => {
+const AllProducts = ({ products, activeView }) => {
   return (
     <section className="mt-10 mb-12.5">
       <Container>
-        <div className="grid grid-cols-4 gap-x-7.5 gap-y-15">
+        <div className={`grid grid-cols-${activeView} gap-x-7.5 gap-y-15`}>
           {products?.map((product) => (
-            <Product product={product} />
+            <Product key={product.id} product={product} />
           ))}
         </div>
       </Container>
