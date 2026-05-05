@@ -22,7 +22,7 @@ const Product = ({ product }) => {
         {/* Overlay Button */}
         <div className="absolute inset-0 flex items-end justify-center opacity-0 transition duration-300 group-hover:opacity-100">
           <div className="mb-5 bg-white px-6 py-2 shadow-md">
-            <button className="text-sm font-medium">ADD TO CART</button>
+            <button className="w-77.5 text-sm font-medium">ADD TO CART</button>
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
-import { FiSliders } from "react-icons/fi";
+import { IoFilter } from "react-icons/io5";
 import Breadcrumb from "../common/Breadcrumb";
 import Container from "../ui/Container";
 const Sorting = () => {
@@ -19,7 +18,7 @@ const Sorting = () => {
       <Container>
         <div className="flex items-center gap-213.5">
           <Breadcrumb />
-          <div className="flex items-center gap-8 border-b pb-3 text-[16px] font-semibold uppercase">
+          <div className="flex items-center gap-8 pb-3 text-[16px] font-semibold uppercase">
             {/* Sorting */}
             <div className="relative">
               <button
@@ -31,7 +30,6 @@ const Sorting = () => {
                   className={`transition-transform ${open ? "rotate-180" : ""}`}
                 />
               </button>
-
               {open && (
                 <div className="absolute top-full left-0 z-50 mt-2 w-56 bg-white shadow-lg">
                   {options.map((item) => (
@@ -76,7 +74,7 @@ const Sorting = () => {
 
             {/* Filter */}
             <button className="flex items-center gap-2 whitespace-nowrap">
-              <FiSliders />
+              <IoFilter />
               FILTER
             </button>
           </div>
