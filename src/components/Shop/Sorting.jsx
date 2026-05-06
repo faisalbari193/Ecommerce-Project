@@ -3,8 +3,10 @@ import { FiChevronDown } from "react-icons/fi";
 import { IoFilter } from "react-icons/io5";
 import Breadcrumb from "../common/Breadcrumb";
 import Container from "../ui/Container";
+import Sidebar from "./SideBar";
 const Sorting = ({ setActiveView, activeView }) => {
   const [open, setOpen] = useState(false);
+  const [filterModal, setFilterModal] = useState(false);
   const [selected, setSelected] = useState("DEFAULT SORTING");
   const options = [
     "DEFAULT SORTING",
@@ -71,10 +73,18 @@ const Sorting = ({ setActiveView, activeView }) => {
             <div className="h-6 w-px bg-gray-300"></div>
 
             {/* Filter */}
-            <button className="flex items-center gap-2.5 whitespace-nowrap">
+            <button
+              onClick={() => setFilterModal(!filterModal)}
+              className="flex items-center gap-2.5 whitespace-nowrap"
+            >
               <IoFilter />
               FILTER
             </button>
+            <div
+              className={`fixed duration-300 ${filterModal ? "w-85" : "w-0"} top-0 right-0 z-50 h-full`}
+            >
+              <Sidebar setFilterModal={setFilterModal} />
+            </div>
           </div>
         </div>
       </Container>
