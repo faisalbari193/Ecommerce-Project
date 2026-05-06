@@ -67,12 +67,11 @@ const Sorting = ({ setActiveView, activeView }) => {
                 </button>
               ))}
             </div>
-
             {/* Divider */}
             <div className="h-6 w-px bg-gray-300"></div>
 
             {/* Filter */}
-            <button className="flex items-center gap-2 whitespace-nowrap">
+            <button className="flex items-center gap-2.5 whitespace-nowrap">
               <IoFilter />
               FILTER
             </button>
