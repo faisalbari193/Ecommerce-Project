@@ -2,9 +2,9 @@ import { FiX, FiChevronDown, FiSearch } from "react-icons/fi";
 
 const Sidebar = ({ setFilterModal }) => {
   return (
-    <div className="overflow-y-auto bg-[#FAF9F8] px-6 py-5">
+    <div className="h-screen overflow-y-auto bg-white">
       {/* Header */}
-      <div className="flex items-center justify-between pt-8.25 pb-6.5">
+      <div className="flex items-center justify-between bg-[#FAF9F8] px-10 pt-8.25 pb-6.5">
         <h3 className="text-[14px] font-semibold tracking-wide">FILTER BY</h3>
         <FiX
           onClick={() => setFilterModal(false)}
@@ -13,7 +13,7 @@ const Sidebar = ({ setFilterModal }) => {
       </div>
 
       {/* PRODUCT CATEGORIES */}
-      <div className="mb-7">
+      <div className="mt-9.5 mb-7 px-6 py-5">
         <div className="mb-4 flex items-center justify-between">
           <h4 className="text-[13px] font-semibold uppercase">
             Product Categories
@@ -42,7 +42,7 @@ const Sidebar = ({ setFilterModal }) => {
       </div>
 
       {/* COLOR */}
-      <div className="mb-7">
+      <div className="mt-9.5 mb-7 px-6 py-5">
         <div className="mb-4 flex items-center justify-between">
           <h4 className="text-[13px] font-semibold uppercase">Color</h4>
           <FiChevronDown />
@@ -71,7 +71,7 @@ const Sidebar = ({ setFilterModal }) => {
       </div>
 
       {/* SIZES */}
-      <div className="mb-7">
+      <div className="mt-9.5 mb-7 px-6 py-5">
         <div className="mb-4 flex items-center justify-between">
           <h4 className="text-[13px] font-semibold uppercase">Sizes</h4>
           <FiChevronDown />
@@ -90,7 +90,7 @@ const Sidebar = ({ setFilterModal }) => {
       </div>
 
       {/* BRANDS */}
-      <div className="mb-7">
+      <div className="mt-9.5 mb-7 px-6 py-5">
         <div className="mb-4 flex items-center justify-between">
           <h4 className="text-[13px] font-semibold uppercase">Brands</h4>
           <FiChevronDown />
@@ -132,7 +132,7 @@ const Sidebar = ({ setFilterModal }) => {
       </div>
 
       {/* PRICE */}
-      <div className="mb-7">
+      <div className="mt-9.5 mb-7 px-6 py-5">
         <div className="mb-4 flex items-center justify-between">
           <h4 className="text-[13px] font-semibold uppercase">Price</h4>
           <FiChevronDown />
