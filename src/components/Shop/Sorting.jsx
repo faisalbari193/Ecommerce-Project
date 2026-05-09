@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { FiChevronDown } from "react-icons/fi";
 import { IoFilter } from "react-icons/io5";
 import Breadcrumb from "../common/Breadcrumb";
@@ -14,6 +14,23 @@ const Sorting = ({ setActiveView, activeView }) => {
     "PRICE: HIGH TO LOW",
     "LATEST",
   ];
+  const filterRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (filterRef.current && !filterRef.current.contains(e.target)) {
+        setFilterModal(false);
+      }
+    };
+    // যদি filter div exist করে
+    // এবং click filter area এর বাইরে হয়
+    // তাহলে...
+    window.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
     <section className="mt-9 mb-10">
       <Container>
@@ -73,17 +90,32 @@ const Sorting = ({ setActiveView, activeView }) => {
             <div className="h-6 w-px bg-gray-300"></div>
 
             {/* Filter */}
-            <button
-              onClick={() => setFilterModal(!filterModal)}
-              className="flex items-center gap-2.5 whitespace-nowrap"
-            >
-              <IoFilter />
-              FILTER
-            </button>
-            <div
-              className={`fixed duration-300 ${filterModal ? "w-85" : "w-0"} top-0 right-0 z-50 h-full`}
-            >
-              <Sidebar setFilterModal={setFilterModal} />
+            <div ref={filterRef}>
+              {/* Filter Button */}
+              <button
+                onClick={() => setFilterModal(!filterModal)}
+                className="flex items-center gap-2.5 whitespace-nowrap"
+              >
+                <IoFilter />
+                FILTER
+              </button>
+
+              {/* Overlay */}
+              {filterModal && (
+                <div
+                  onClick={() => setFilterModal(false)}
+                  className="fixed inset-0 z-40 bg-black/30"
+                ></div>
+              )}
+
+              {/* Sidebar */}
+              <div
+                className={`fixed top-0 right-0 z-50 h-full overflow-hidden bg-white duration-300 ${
+                  filterModal ? "w-85" : "w-0"
+                }`}
+              >
+                <Sidebar setFilterModal={setFilterModal} />
+              </div>
             </div>
           </div>
         </div>

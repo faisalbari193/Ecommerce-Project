@@ -6,7 +6,12 @@ const AllProducts = ({ products, activeView }) => {
   return (
     <section className="mt-10 mb-12.5">
       <Container>
-        <div className={`grid grid-cols-${activeView} gap-x-7.5 gap-y-15`}>
+        <div
+          style={{
+            gridTemplateColumns: `${activeView == 2 ? "1fr 1fr" : activeView == 3 ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr"}`,
+          }}
+          className={`grid gap-x-7.5 gap-y-15`}
+        >
           {products?.map((product) => (
             <Product key={product.id} product={product} />
           ))}

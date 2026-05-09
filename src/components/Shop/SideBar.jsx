@@ -1,8 +1,8 @@
 import { FiX, FiChevronDown, FiSearch } from "react-icons/fi";
-
+import PriceRange from "./PriceRange";
 const Sidebar = ({ setFilterModal }) => {
   return (
-    <div className="h-screen overflow-y-auto bg-white">
+    <div className="h-screen max-w-105 overflow-y-auto bg-white">
       {/* Header */}
       <div className="flex items-center justify-between bg-[#FAF9F8] px-10 pt-8.25 pb-6.5">
         <h3 className="text-[14px] font-semibold tracking-wide">FILTER BY</h3>
@@ -137,16 +137,9 @@ const Sidebar = ({ setFilterModal }) => {
           <h4 className="text-[13px] font-semibold uppercase">Price</h4>
           <FiChevronDown />
         </div>
-
-        <input type="range" className="mb-2 w-full" />
-
-        <div className="mb-3 flex justify-between text-[12px] text-gray-500">
-          <span>Min Price: $29</span>
-          <span>Max Price: $937</span>
-        </div>
-
+        <PriceRange />
         {/* Tags */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-5">
           {["Billes", "Max Price: $491", "Zara"].map((tag) => (
             <span key={tag} className="bg-gray-200 px-2 py-1 text-[11px]">
               ✕ {tag}
