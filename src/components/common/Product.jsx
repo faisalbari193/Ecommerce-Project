@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "./Image";
 const Product = ({ product }) => {
   return (
     <div className="max-w-82.5 px-3.75">

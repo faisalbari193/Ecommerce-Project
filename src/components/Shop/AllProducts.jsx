@@ -1,20 +1,17 @@
 import React from "react";
 import Container from "../ui/Container";
-import Product from "../common/Product";
+import Pagination from "./Pagination";
 
 const AllProducts = ({ products, activeView }) => {
   return (
     <section className="mt-10 mb-12.5">
       <Container>
         <div
-          style={{
-            gridTemplateColumns: `${activeView == 2 ? "1fr 1fr" : activeView == 3 ? "1fr 1fr 1fr" : "1fr 1fr 1fr 1fr"}`,
-          }}
-          className={`grid gap-x-7.5 gap-y-15`}
         >
-          {products?.map((product) => (
+          {/* {products?.map((product) => (
             <Product key={product.id} product={product} />
-          ))}
+          ))} */}
+          <Pagination itemsPerPage={8} products={products} activeView={activeView}/>
         </div>
       </Container>
     </section>
