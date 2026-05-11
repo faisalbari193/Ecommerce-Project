@@ -1,10 +1,10 @@
 import { useState } from "react";
-import ReactPaginate from "react-paginate";
+import ReactPaginateLib from "react-paginate";
 import Product from "../common/Product";
 const Pagination = ({ itemsPerPage, products, activeView }) => {
   const [itemOffset, setItemOffset] = useState(0);
   const items = products;
-  console.log(typeof ReactPaginate);
+  const ReactPaginate = ReactPaginateLib.default || ReactPaginateLib;
   function Items({ currentItems }) {
     return (
       <div
