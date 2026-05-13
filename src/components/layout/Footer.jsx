@@ -244,7 +244,7 @@ import Payment from "../../assets/Images/payments.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#E4E4E4]">
+    <footer className="hidden bg-[#E4E4E4] md:block">
       <Container>
         {/* Main Footer */}
         <div className="grid grid-cols-1 gap-10 pt-20 pb-16 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1fr_1.3fr]">

@@ -21,7 +21,7 @@ const Banner = () => {
     appendDots: (dots) => (
       <div>
         <ul
-          className="absolute bottom-14.5 left-48.75 flex gap-5"
+          className="absolute bottom-5 left-5 flex gap-5 md:bottom-14.5 md:left-48.75"
           style={{ margin: "0px" }}
         >
           {dots}
@@ -34,11 +34,11 @@ const Banner = () => {
   };
 
   return (
-    <section className="mx-15">
-      <div>
+    <section className="mt-5 md:mx-15 md:mt-0">
+      <div className="hidden md:block">
         <SocialSidebar />
       </div>
-      <div className="ml-4">
+      <div className="md:ml-4">
         <Slider {...settings}>
           {BannerData?.map((item) => (
             <div key={item.id}>

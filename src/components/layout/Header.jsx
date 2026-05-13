@@ -3,12 +3,13 @@ import Image from "../common/Image";
 import Container from "../ui/Container";
 import { navbardata } from "../../api/navbardata";
 import { Link } from "react-router";
+import MobileNav from "../../mobile/MobileComponents/MobileNav";
 const Header = () => {
   const cartItems = 3;
   return (
     <>
       <header className="mt-7.25 mb-4.75">
-        <nav>
+        <nav className="hidden md:block">
           <Container>
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -140,6 +141,7 @@ const Header = () => {
           </Container>
         </nav>
       </header>
+      <MobileNav />
     </>
   );
 };
