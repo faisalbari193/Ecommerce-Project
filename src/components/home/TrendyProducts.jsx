@@ -3,12 +3,14 @@ import Container from "../ui/Container";
 import { ProductCategoryData } from "../../api/productcategory";
 import Product from "../common/Product";
 import axios from "axios";
+import { useNavigate } from "react-router";
 
 const TrendyProducts = () => {
   const [products, setProducts] = useState([]);
   const [activeCategory, setActiveCategory] = useState("all");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showAll, setShowAll] = useState(false);
+  const navigate = useNavigate();
 
   let limitedProducts = showAll ? products : products.slice(0, 12);
 
@@ -59,7 +61,6 @@ const TrendyProducts = () => {
                   : "font-custom text-secondary-color relative cursor-pointer text-base font-medium"
               }`}
             >
-              
               {item.name}
             </li>
           ))}
@@ -68,10 +69,18 @@ const TrendyProducts = () => {
         <div className="mt-10 grid grid-cols-4 gap-x-7.5 gap-y-15">
           {activeCategory === "all"
             ? limitedProducts?.map((product) => (
-                <Product product={product} key={product.id} />
+                <Product
+                  onClick={() => navigate(`/products/${product.id}`)}
+                  product={product}
+                  key={product.id}
+                />
               ))
             : filteredProducts?.map((product) => (
-                <Product product={product} key={product.id} />
+                <Product
+                  onClick={() => navigate(`/products/${product.id}`)}
+                  product={product}
+                  key={product.id}
+                />
               ))}
         </div>
 

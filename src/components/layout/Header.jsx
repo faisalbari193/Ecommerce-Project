@@ -22,7 +22,7 @@ const Header = () => {
                       <Link to={navItem.url}>{navItem.name}</Link>
                       {/* LOOKBOOK DROPDOWN */}
                       {navItem.name === "LOOKBOOK" && (
-                        <div className="invisible absolute top-11.25 -left-200 z-50 w-screen border-t bg-white opacity-0 shadow-[0_10px_40px_rgba(0,0,0,0.08)] duration-300 group-hover:visible group-hover:opacity-100">
+                        <div className="invisible absolute top-11.25 -left-208 z-50 w-screen border-t bg-white opacity-0 shadow-[0_10px_40px_rgba(0,0,0,0.08)] duration-300 group-hover:visible group-hover:opacity-100">
                           <Container>
                             <div className="grid grid-cols-4 gap-16 py-10">
                               {/* Column 1 */}

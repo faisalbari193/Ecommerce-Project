@@ -4,6 +4,9 @@ import RootLayout from "./components/layout/RootLayout";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Shop from "./pages/Shop";
+import TrendyProducts from "./components/home/TrendyProducts";
+import ShopSingleGrouped from "./components/home/ShopSingleGrouped";
+import JournalPage from "./components/home/JournalPage";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -14,6 +17,14 @@ const App = () => {
         {
           index: true,
           Component: Home,
+        },
+        {
+          path: "/journal",
+          Component: JournalPage,
+        },
+        {
+          path: "/products/:id",
+          Component: ShopSingleGrouped,
         },
         {
           path: "/about",

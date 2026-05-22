@@ -16,6 +16,7 @@ export const navbardata = [
   {
     id: 4,
     name: "JOURNAL",
+    url: "/journal",
   },
   {
     id: 5,
