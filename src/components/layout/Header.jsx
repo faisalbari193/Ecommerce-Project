@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <header className="mt-7.25 mb-4.75">
-        <nav className="hidden md:block">
+        <nav className="relative hidden md:block">
           <Container>
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -18,8 +18,247 @@ const Header = () => {
                 </Link>
                 <ul className="ul-list">
                   {navbardata?.map((navItem) => (
-                    <li key={navItem.id} className="list-items">
+                    <li key={navItem.id} className="list-items group relative">
                       <Link to={navItem.url}>{navItem.name}</Link>
+                      {/* LOOKBOOK DROPDOWN */}
+                      {navItem.name === "LOOKBOOK" && (
+                        <div className="invisible absolute top-11.25 -left-200 z-50 w-screen border-t bg-white opacity-0 shadow-[0_10px_40px_rgba(0,0,0,0.08)] duration-300 group-hover:visible group-hover:opacity-100">
+                          <Container>
+                            <div className="grid grid-cols-4 gap-16 py-10">
+                              {/* Column 1 */}
+                              <div>
+                                <h3 className="mb-5 text-[14px] font-semibold uppercase">
+                                  Shop Pages
+                                </h3>
+
+                                <ul className="space-y-3 text-[14px] text-gray-600">
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Default
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Topbar
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Collapse
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Simple
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Masonry
+                                    </a>
+                                  </li>
+                                </ul>
+
+                                <h3 className="mt-10 mb-5 text-[14px] font-semibold uppercase">
+                                  Product Pages
+                                </h3>
+
+                                <ul className="space-y-3 text-[14px] text-gray-600">
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Default
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Images Left
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Image Grid
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Image Slider
+                                    </a>
+                                  </li>
+
+                                  <li>
+                                    <a
+                                      href="#"
+                                      className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                    >
+                                      Images Stacked
+                                    </a>
+                                  </li>
+                                </ul>
+                              </div>
+
+                              {/* Column 2 */}
+                              <div>
+                                <h3 className="mb-5 text-[14px] font-semibold uppercase">
+                                  Other Pages
+                                </h3>
+
+                                <ul className="space-y-3 text-[14px] text-gray-600">
+                                  {[
+                                    "Collection",
+                                    "LookBook",
+                                    "Categories Page",
+                                    "Shopping Cart",
+                                    "Wishlist",
+                                    "Order Tracking",
+                                    "Checkout",
+                                    "Checkout — 2 Columns",
+                                  ].map((item) => (
+                                    <li key={item}>
+                                      <a
+                                        href="#"
+                                        className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                      >
+                                        {item}
+                                      </a>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+
+                              {/* Column 3 */}
+                              <div>
+                                <h3 className="mb-5 text-[14px] font-semibold uppercase">
+                                  Elements
+                                </h3>
+
+                                <div className="grid grid-cols-2 gap-8">
+                                  <ul className="space-y-3 text-[14px] text-gray-600">
+                                    {[
+                                      "Accordion",
+                                      "Pricing Table",
+                                      "Google Maps",
+                                      "Message Box",
+                                      "Progress Bars",
+                                      "Charts",
+                                      "Icon Box",
+                                      "Product Tabs",
+                                      "Products Grid",
+                                    ].map((item) => (
+                                      <li key={item}>
+                                        <a
+                                          href="#"
+                                          className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                        >
+                                          {item}
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+
+                                  <ul className="space-y-3 text-[14px] text-gray-600">
+                                    {[
+                                      "Buttons",
+                                      "Testimonials",
+                                      "Social Icons",
+                                      "Blog Posts",
+                                      "Tabs",
+                                      "Video Players",
+                                      "Team",
+                                    ].map((item) => (
+                                      <li key={item}>
+                                        <a
+                                          href="#"
+                                          className="after:bg-primary-black relative inline-block after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:duration-300 after:content-[''] hover:after:w-[40%]"
+                                        >
+                                          {item}
+                                        </a>
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </div>
+                              </div>
+
+                              {/* Image */}
+                              <div>
+                                <div className="relative overflow-hidden bg-[#F4F4F4]">
+                                  <img
+                                    src="https://i.ibb.co/7jQ0K9w/lookbook-banner.png"
+                                    alt="lookbook"
+                                    className="h-full w-full object-cover"
+                                  />
+
+                                  <div className="absolute bottom-8 left-8">
+                                    <h3 className="text-[38px] leading-10 font-semibold text-black">
+                                      NEW <br /> HORIZONS
+                                    </h3>
+
+                                    <button className="mt-3 border-b border-black text-[13px] font-medium uppercase">
+                                      SHOP NOW
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </Container>
+                        </div>
+                      )}
+                      {navItem.name === "PAGES" && (
+                        <div className="invisible absolute top-11.25 left-0 z-50 w-60 bg-white opacity-0 shadow-lg duration-300 group-hover:visible group-hover:opacity-100">
+                          <ul className="py-4">
+                            {[
+                              "About",
+                              "Contact Us",
+                              "Store Locator",
+                              "FAQ",
+                              "Coming Soon",
+                              "404",
+                            ].map((item) => (
+                              <li key={item}>
+                                <a
+                                  href="#"
+                                  className="block px-5 py-2 text-[14px] text-gray-600 hover:bg-gray-100"
+                                >
+                                  {item}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
                     </li>
                   ))}
                 </ul>
