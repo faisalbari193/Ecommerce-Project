@@ -6,7 +6,6 @@ const NewsletterModal = () => {
 
   // Website load hole modal show korbe
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setOpenModal(true);
   }, []);
 
@@ -21,57 +20,57 @@ const NewsletterModal = () => {
   return (
     <div
       onClick={handleClose}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-[2px]"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/30 p-4 backdrop-blur-[2px]"
     >
       {/* Modal */}
       <div
         onClick={(e) => e.stopPropagation()}
-        className="relative flex h-107.5 w-175 overflow-hidden bg-white shadow-2xl"
+        className="relative flex w-full max-w-5xl flex-col overflow-hidden bg-white shadow-2xl md:flex-row"
       >
         {/* Close Button */}
         <button
           onClick={handleClose}
-          className="absolute top-5 right-5 cursor-pointer text-[22px] text-black"
+          className="absolute top-4 right-4 z-10 cursor-pointer text-[22px] text-black md:top-5 md:right-5"
         >
           <IoCloseOutline />
         </button>
 
         {/* Left Side */}
-        <div className="relative flex w-1/2 items-center justify-center bg-[#F3F3F3]">
+        <div className="relative hidden min-h-[250px] w-full items-center justify-center bg-[#F3F3F3] md:flex md:w-1/2">
           {/* Circle */}
-          <div className="absolute bottom-8 left-0 h-40 w-40 rounded-full bg-[#CFCFCF]"></div>
+          <div className="absolute bottom-6 left-0 h-28 w-28 rounded-full bg-[#CFCFCF] md:h-40 md:w-40"></div>
 
           {/* Triangle */}
           <div
-            className="absolute top-20.5 left-29.5 h-0 w-0"
+            className="absolute top-16 left-1/2 h-0 w-0 -translate-x-1/2 md:top-20"
             style={{
-              borderLeft: "75px solid transparent",
-              borderRight: "75px solid transparent",
-              borderBottom: "130px solid #BDBDBD",
+              borderLeft: "60px solid transparent",
+              borderRight: "60px solid transparent",
+              borderBottom: "110px solid #BDBDBD",
             }}
           ></div>
         </div>
 
         {/* Right Side */}
-        <div className="py-46.75 px-10.25">
-          <h2 className="mb-3.5 font-custom font-medium text-[26px]">
+        <div className="w-full px-6 py-14 sm:px-8 md:w-1/2 md:px-10 md:py-32">
+          <h2 className="font-custom mb-4 text-[22px] font-medium md:text-[26px]">
             Sign Up to Our Newsletter
           </h2>
 
-          <p className="mb-3.75 text-[14px] leading-6 text-[#666]">
+          <p className="mb-5 text-[14px] leading-6 text-[#666]">
             Be the first to get the latest news about trends, promotions, and
             much more!
           </p>
 
           {/* Input */}
-          <div className="flex h-12 border border-[#D9D9D9]">
+          <div className="flex flex-col overflow-hidden rounded-md border border-[#D9D9D9] sm:h-12 sm:flex-row">
             <input
               type="email"
               placeholder="Your email address"
-              className="h-full flex-1 px-4 text-[13px] outline-none"
+              className="h-12 w-full px-4 text-[13px] outline-none sm:flex-1"
             />
 
-            <button className="cursor-pointer px-6 text-[12px] font-semibold tracking-wide uppercase">
+            <button className="h-12 w-full cursor-pointer border-t border-[#D9D9D9] px-6 text-[12px] font-semibold tracking-wide uppercase duration-300 hover:bg-black hover:text-white sm:w-auto sm:border-t-0 sm:border-l">
               Join
             </button>
           </div>

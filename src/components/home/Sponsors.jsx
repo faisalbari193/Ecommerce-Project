@@ -65,22 +65,25 @@ const sponsors = [
 
 const Sponsors = () => {
   return (
-    <section className="mt-20.75">
+    <section className="mt-14 md:mt-20.75">
       <Container>
-        <div className="px-12.25">
-          <p className="font-custom mb-8 text-center text-[35px] font-normal">
+        <div className="px-4 md:px-12.25">
+          {/* Title */}
+          <p className="font-custom mb-6 text-center text-[22px] font-normal md:mb-8 md:text-[35px]">
             @UOMO
           </p>
-          <div className="grid grid-cols-6 gap-1">
+
+          {/* Grid */}
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-6 md:gap-1">
             {sponsors.map((brand) => (
               <div
                 key={brand.id}
-                className="flex h-24 items-center justify-center bg-[#EBEBEB] transition-colors hover:bg-[#E0E0E0]"
+                className="flex h-20 items-center justify-center bg-[#EBEBEB] transition-colors hover:bg-[#E0E0E0] md:h-24"
               >
                 <img
                   src={brand.src}
                   alt={brand.name}
-                  className="h-12 w-20 object-contain opacity-60 grayscale transition-opacity hover:opacity-80"
+                  className="h-8 w-16 object-contain opacity-60 grayscale transition-opacity hover:opacity-80 md:h-12 md:w-20"
                 />
               </div>
             ))}

@@ -70,18 +70,20 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="mt-25.5 mb-25 px-25.5">
+    <section className="mt-14 mb-14 px-4 md:mt-25.5 md:mb-25 md:px-25.5">
       <Container>
-        <div className="grid grid-cols-3 divide-x divide-gray-200">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3 md:gap-0 md:divide-x md:divide-gray-200">
           {features.map((feature) => (
             <div
               key={feature.id}
-              className="flex flex-col items-center px-10 text-center"
+              className="flex flex-col items-center px-4 text-center md:px-10"
             >
               <div className="mb-4 text-gray-800">{feature.icon}</div>
+
               <h4 className="mb-1 text-[14px] font-bold tracking-wide text-gray-900">
                 {feature.title}
               </h4>
+
               <p className="text-[13px] text-gray-400">{feature.desc}</p>
             </div>
           ))}

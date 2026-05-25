@@ -10,6 +10,7 @@ const TrendyProducts = () => {
   const [activeCategory, setActiveCategory] = useState("all");
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [showAll, setShowAll] = useState(false);
+
   const navigate = useNavigate();
 
   let limitedProducts = showAll ? products : products.slice(0, 12);
@@ -19,6 +20,7 @@ const TrendyProducts = () => {
       .get("https://dummyjson.com/products")
       .then((res) => {
         setProducts(res.data.products);
+        setFilteredProducts(res.data.products);
         setActiveCategory("all");
       })
       .catch((err) => {
@@ -29,36 +31,41 @@ const TrendyProducts = () => {
         );
       });
   }
+
   useEffect(() => {
     getProducts();
   }, []);
 
   const handleActive = (name) => {
     setActiveCategory(name);
+
     if (name === "all") {
       setFilteredProducts(products);
     } else {
       let filtered = products.filter((product) => product.category === name);
+
       setFilteredProducts(filtered);
     }
   };
 
   return (
-    <section className="mt-25.25">
+    <section className="mt-14 md:mt-25">
       <Container>
-        <h2 className="font-custom text-primary-black text-center text-[35px] font-normal">
+        {/* Heading */}
+        <h2 className="font-custom text-primary-black text-center text-[24px] font-normal md:text-[35px]">
           OUR TRENDY <span className="font-bold">PRODUCTS</span>
         </h2>
 
-        <ul className="mt-7.5 flex justify-center gap-13.5">
+        {/* Category */}
+        <ul className="mt-6 flex flex-wrap justify-center gap-5 md:mt-7.5 md:gap-13.5">
           {ProductCategoryData?.map((item) => (
             <li
               key={item.id}
               onClick={() => handleActive(item.name)}
               className={`${
-                activeCategory == item.name
-                  ? "font-custom after:bg-primary-black text-secondary-color relative cursor-pointer text-base font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[50%] after:duration-300 after:content-['']"
-                  : "font-custom text-secondary-color relative cursor-pointer text-base font-medium"
+                activeCategory === item.name
+                  ? "font-custom text-secondary-color relative cursor-pointer text-sm font-medium after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-[50%] after:bg-black after:duration-300 after:content-[''] md:text-base"
+                  : "font-custom text-secondary-color relative cursor-pointer text-sm font-medium md:text-base"
               }`}
             >
               {item.name}
@@ -66,29 +73,31 @@ const TrendyProducts = () => {
           ))}
         </ul>
 
-        <div className="mt-10 grid grid-cols-4 gap-x-7.5 gap-y-15">
+        {/* Products Grid */}
+        <div className="mt-8 grid grid-cols-1 gap-8 grid-cols-2 md:mt-10  md:gap-x-6 md:gap-y-10 md:grid-cols-4 lg:gap-x-7.5 lg:gap-y-15">
           {activeCategory === "all"
             ? limitedProducts?.map((product) => (
                 <Product
-                  onClick={() => navigate(`/products/${product.id}`)}
-                  product={product}
                   key={product.id}
+                  product={product}
+                  onClick={() => navigate(`/products/${product.id}`)}
                 />
               ))
             : filteredProducts?.map((product) => (
                 <Product
-                  onClick={() => navigate(`/products/${product.id}`)}
-                  product={product}
                   key={product.id}
+                  product={product}
+                  onClick={() => navigate(`/products/${product.id}`)}
                 />
               ))}
         </div>
 
+        {/* Button */}
         {products.length > 12 && activeCategory === "all" && (
-          <div className="mt-10 text-center">
+          <div className="mt-8 text-center md:mt-10">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="bg-white px-6 py-2 text-black duration-300 hover:bg-gray-800 hover:text-white"
+              className="bg-white px-5 py-2 text-sm text-black duration-300 hover:bg-gray-800 hover:text-white md:px-6 md:text-base"
             >
               {showAll ? "See Less Products" : "See More Products"}
             </button>
