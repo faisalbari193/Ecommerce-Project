@@ -1,7 +1,7 @@
 # 🛍️ UOMO E-Commerce Website
 
 <div align="center">
-  <img src="./Screenshot_155.png" alt="UOMO Website Preview" width="100%" />
+  <img src="[./Screenshot_155.png" alt="UOMO Website Preview](https://i.postimg.cc/gcyLm78r/Screenshot-155.png)" width="100%" />
 </div>
 
 ---
